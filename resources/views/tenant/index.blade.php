@@ -82,7 +82,11 @@
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
     <script type="text/javascript">
-        $('#table').DataTable({
+        var table = $('#table').DataTable({
+            "lengthMenu": [
+                [10, 25, 50, -1],
+                [10, 25, 50, "ALL"]
+            ],
             "scrollX": true,
             "processing": true,
             "bserverSide": true,
@@ -90,8 +94,7 @@
                 url: "{{ url('') }}/tenant/data",
                 type: "POST",
             },
-            columnDefs: [
-                {
+            columnDefs: [{
                     "targets": 0,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
@@ -102,6 +105,7 @@
                     "targets": 1,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
+                        // return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.nama + '</a>';
                         return row.nama;
                     }
                 },
@@ -179,5 +183,10 @@
                 },
             ]
         });
+
+        $('#table tbody').on('click', 'tr', function () {
+        var data = table.row( this ).data();
+        alert( 'You clicked on '+data[0]+'\'s row' );
+    } );
     </script>
 @endsection
