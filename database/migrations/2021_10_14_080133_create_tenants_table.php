@@ -29,6 +29,30 @@ class CreateTenantsTable extends Migration
             $table->enum('status_hunian',['aktif','tidak aktif'])->default('tidak aktif');
             $table->enum('status_penghuni',['pemilik','penyewa'])->default('pemilik');
 
+            $table->string('no_inet_basic')->nullable();
+            $table->string('no_telp1_basic')->nullable();
+            $table->string('no_telp2_basic')->nullable();
+            $table->string('pass_stb_basic')->nullable();
+            $table->string('sn_ont_basic')->nullable();
+            $table->string('sn_stb_basic')->nullable();
+
+            $table->string('no_inet_upgrade')->nullable();
+            $table->string('no_telp1_upgrade')->nullable();
+            $table->string('no_telp2_upgrade')->nullable();
+            $table->string('pass_stb_upgrade')->nullable();
+            $table->string('sn_ont_upgrade')->nullable();
+            $table->string('sn_stb_upgrade')->nullable();
+            $table->string('paket_upgrade')->nullable();
+
+            $table->string('pppoe')->nullable();
+            $table->string('pass_pppoe')->nullable();
+            $table->string('ip_public')->nullable();
+            $table->string('gateway')->nullable();
+            $table->string('subnetmask')->nullable();
+            $table->string('dns1')->nullable();
+            $table->string('dns2')->nullable();
+            $table->string('paket_netzap')->nullable();
+
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('edited_by')->nullable();
 

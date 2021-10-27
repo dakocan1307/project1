@@ -17,15 +17,15 @@ class CreateIndihomeUpgradesTable extends Migration
             $table->id('ih_upgrade_id');
             $table->unsignedBigInteger('tenant_id')->nullable();
 
-            $table->string('no_inet')->nullable();
-            $table->string('no_telp1')->nullable();
-            $table->string('no_telp2')->nullable();
-            $table->string('pass_stb')->nullable();
-            $table->string('sn_ont')->nullable();
-            $table->string('sn_stb')->nullable();
-            $table->string('paket')->nullable();
-            $table->string('harga_paket')->nullable();
-            $table->string('income_fix')->nullable();
+            $table->string('no_inet_upgrade')->nullable();
+            $table->string('no_telp1_upgrade')->nullable();
+            $table->string('no_telp2_upgrade')->nullable();
+            $table->string('pass_stb_upgrade')->nullable();
+            $table->string('sn_ont_upgrade')->nullable();
+            $table->string('sn_stb_upgrade')->nullable();
+            $table->string('paket_upgrade')->nullable();
+            $table->string('harga_paket_indihome')->nullable();
+            $table->string('income_fix_indihome')->nullable();
             $table->enum('status',['aktif','tidak aktif'])->default('aktif');
 
             $table->unsignedBigInteger('created_by')->nullable();

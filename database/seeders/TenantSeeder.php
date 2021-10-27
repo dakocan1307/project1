@@ -27,6 +27,11 @@ class TenantSeeder extends Seeder
             'komplek'           =>  'Bougenville',
             'tower'             =>  'Gloria',
             'status_hunian'     =>  'aktif',
+            'no_inet_basic'     =>  '121509201121',
+            'no_telp1_basic'    =>  '02122601001',
+            'pass_stb_basic'    =>  '79000001',
+            'sn_ont_basic'      =>  'ZTEGC123ABC',
+            'sn_stb_basic'      =>  'JA120000ACA001',
             'created_by'        =>  '1',
         ]);
 

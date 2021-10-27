@@ -24,9 +24,9 @@ class CreateNetzapsTable extends Migration
             $table->string('subnetmask')->nullable();
             $table->string('dns1')->nullable();
             $table->string('dns2')->nullable();
-            $table->string('paket')->nullable();
-            $table->string('harga_paket')->nullable();
-            $table->string('income_fix')->nullable();
+            $table->string('paket_netzap')->nullable();
+            $table->string('harga_paket_netzap')->nullable();
+            $table->string('income_fix_netzap')->nullable();
             $table->enum('status',['aktif','tidak aktif'])->default('aktif');
 
             $table->unsignedBigInteger('created_by')->nullable();
