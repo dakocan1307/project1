@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(TenantSeeder::class);
+        $this->call(IndihomeBasicSeeder::class);
     }
 }
