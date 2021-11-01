@@ -37,15 +37,15 @@
                                             <th>Unit</th>
                                             <th>Nama</th>
                                             <th>KTP</th>
-                                            <th>Telp 1</th>
-                                            <th>Telp 2</th>
-                                            <th>Email 1</th>
-                                            <th>Email 2</th>
+                                            <th>Telp</th>
+                                            <th>Email</th>
                                             <th>Alamat</th>
                                             <th>IN Basic</th>
                                             <th>Pots Basic</th>
                                             <th>IN Upgrade</th>
                                             <th>Pots Upgrade</th>
+                                            <th>PPPOE</th>
+                                            <th>Pass PPPOE</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -82,7 +82,7 @@
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
     <script type="text/javascript">
-        var table = $('#table').DataTable({
+        $('#table').DataTable({
             "lengthMenu": [
                 [10, 25, 50, -1],
                 [10, 25, 50, "ALL"]
@@ -98,95 +98,91 @@
                     "targets": 0,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return row.unit;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.unit + '</a>';
                     }
                 },
                 {
                     "targets": 1,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        // return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.nama + '</a>';
-                        return row.nama;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.nama + '</a>';
+                        // return row.nama;
                     }
                 },
                 {
                     "targets": 2,
+                    "visible": false,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return row.nomor_ktp;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.nomor_ktp + '</a>';
                     }
                 },
                 {
                     "targets": 3,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return row.telp1;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.telp1 + ', ' + row.telp2 + '</a>';
                     }
                 },
                 {
                     "targets": 4,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return row.telp2;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.email1 + ', ' + row.email2 + '</a>';
                     }
                 },
                 {
                     "targets": 5,
+                    "visible": false,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return row.email1;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.alamat + '</a>';
                     }
                 },
                 {
                     "targets": 6,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return row.email2;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.no_inet_basic + '</a>';
                     }
                 },
                 {
                     "targets": 7,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return row.alamat;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + 'Pots1: ' + row.no_telp1_basic + ', Pots2: ' + row.no_telp2_basic + '</a>';
                     }
                 },
                 {
                     "targets": 8,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return row.no_inet_basic;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.no_inet_upgrade + '</a>';
                     }
                 },
                 {
                     "targets": 9,
-                    "visible": false,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return row.no_telp1_basic;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + 'Pots1: ' + row.no_telp1_upgrade + ', Pots2: ' + row.no_telp2_upgrade + '</a>';
                     }
                 },
                 {
                     "targets": 10,
-                    "visible": false,
+                    // "visible": false,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return row.no_inet_upgrade;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.pppoe + '</a>';
                     }
                 },
                 {
                     "targets": 11,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return row.no_telp1_upgrade;
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.pass_pppoe + '</a>';
                     }
                 },
             ]
         });
-
-        $('#table tbody').on('click', 'tr', function () {
-        var data = table.row( this ).data();
-        alert( 'You clicked on '+data[0]+'\'s row' );
-    } );
     </script>
 @endsection
