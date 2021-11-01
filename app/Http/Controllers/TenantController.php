@@ -27,15 +27,39 @@ class TenantController extends Controller
      */
     public function data(Request $request)
     {
-        $data = DB::table('tenants')->get();
-        $recordsFiltered = $data->count();
-        $recordsTotal = $data->count();
+        if ($request->komplek) {
+            $data = Tenant::where('komplek', $request->komplek)->get();
+            $recordsFiltered = $data->count();
+            $recordsTotal = $data->count();
 
-        return response()->json([
-            'draw'=>$request->input('draw'),
-            'recordsTotal'=>$recordsTotal,
-            'recordsFiltered'=>$recordsFiltered,
-            'data'=>$data
-        ]);
+            return response()->json([
+                'draw' => $request->input('draw'),
+                'recordsTotal' => $recordsTotal,
+                'recordsFiltered' => $recordsFiltered,
+                'data' => $data
+            ]);
+        } else {
+            $data = Tenant::get();
+            $recordsFiltered = $data->count();
+            $recordsTotal = $data->count();
+
+            return response()->json([
+                'draw' => $request->input('draw'),
+                'recordsTotal' => $recordsTotal,
+                'recordsFiltered' => $recordsFiltered,
+                'data' => $data
+            ]);
+        }
+
+        // $data = DB::table('tenants')->get();
+        // $recordsFiltered = $data->count();
+        // $recordsTotal = $data->count();
+
+        // return response()->json([
+        //     'draw' => $request->input('draw'),
+        //     'recordsTotal' => $recordsTotal,
+        //     'recordsFiltered' => $recordsFiltered,
+        //     'data' => $data
+        // ]);
     }
 }

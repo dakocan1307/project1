@@ -31,6 +31,11 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
+                                <select id="komplekFilter" class="mb-2">
+                                    <option value="">Komplek</option>
+                                    <option value="Bougenville">Bougenville</option>
+                                    <option value="Jasmine">Jasmine</option>
+                                </select>
                                 <table id="table" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
@@ -82,14 +87,14 @@
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
     <script type="text/javascript">
-        $('#table').DataTable({
+        var table = $('#table').DataTable({
             "lengthMenu": [
                 [10, 25, 50, -1],
                 [10, 25, 50, "ALL"]
             ],
             "scrollX": true,
             "processing": true,
-            "bserverSide": true,
+            "serverSide": true,
             ajax: {
                 url: "{{ url('') }}/tenant/data",
                 type: "POST",
@@ -184,5 +189,11 @@
                 },
             ]
         });
+
+        $('#komplekFilter').on('change', function(){
+      var filter_value = $(this).val();
+      var liveurl = '{{ url('') }}/tenant/data/'+filter_value;
+      table.ajax.url(liveurl).load();
+    });
     </script>
 @endsection

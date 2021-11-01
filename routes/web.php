@@ -27,5 +27,6 @@ Route::middleware('role:ts_staff|cs_staff')->get('/home', [App\Http\Controllers\
 Route::middleware('auth')->group(function () {
     Route::get('/tenant',[\App\Http\Controllers\TenantController::class, 'index'])->name('tenant-index');
     Route::any('/tenant/data',[\App\Http\Controllers\TenantController::class, 'data']);
+    Route::any('/tenant/data/{komplek}',[\App\Http\Controllers\TenantController::class, 'data']);
 });
 
