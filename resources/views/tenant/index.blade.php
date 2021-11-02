@@ -85,8 +85,9 @@
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <script src="{{ asset('js/datatables-data-tenant.js') }}"></script>
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         var table = $('#table').DataTable({
             "lengthMenu": [
                 [10, 25, 50, -1],
@@ -126,14 +127,16 @@
                     "targets": 3,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.telp1 + ', ' + row.telp2 + '</a>';
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.telp1 + ', ' + row
+                            .telp2 + '</a>';
                     }
                 },
                 {
                     "targets": 4,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.email1 + ', ' + row.email2 + '</a>';
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.email1 + ', ' + row
+                            .email2 + '</a>';
                     }
                 },
                 {
@@ -148,28 +151,32 @@
                     "targets": 6,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.no_inet_basic + '</a>';
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.no_inet_basic +
+                            '</a>';
                     }
                 },
                 {
                     "targets": 7,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + 'Pots1: ' + row.no_telp1_basic + ', Pots2: ' + row.no_telp2_basic + '</a>';
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + 'Pots1: ' + row
+                            .no_telp1_basic + ', Pots2: ' + row.no_telp2_basic + '</a>';
                     }
                 },
                 {
                     "targets": 8,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.no_inet_upgrade + '</a>';
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.no_inet_upgrade +
+                            '</a>';
                     }
                 },
                 {
                     "targets": 9,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + 'Pots1: ' + row.no_telp1_upgrade + ', Pots2: ' + row.no_telp2_upgrade + '</a>';
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + 'Pots1: ' + row
+                            .no_telp1_upgrade + ', Pots2: ' + row.no_telp2_upgrade + '</a>';
                     }
                 },
                 {
@@ -184,16 +191,17 @@
                     "targets": 11,
                     "class": "text-nowrap",
                     "render": function(data, type, row, meta) {
-                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.pass_pppoe + '</a>';
+                        return '<a href="' + "tenant" + "/" + row.tenant_id + '">' + row.pass_pppoe +
+                        '</a>';
                     }
                 },
             ]
         });
 
-        $('#komplekFilter').on('change', function(){
-      var filter_value = $(this).val();
-      var liveurl = '{{ url('') }}/tenant/data/'+filter_value;
-      table.ajax.url(liveurl).load();
-    });
-    </script>
+        $('#komplekFilter').on('change', function() {
+            var filter_value = $(this).val();
+            var liveurl = '{{ url('') }}/tenant/data/' + filter_value;
+            table.ajax.url(liveurl).load();
+        });
+    </script> --}}
 @endsection
