@@ -28,5 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/tenant',[\App\Http\Controllers\TenantController::class, 'index'])->name('tenant-index');
     Route::any('/tenant/data',[\App\Http\Controllers\TenantController::class, 'data']);
     Route::any('/tenant/data/{komplek}',[\App\Http\Controllers\TenantController::class, 'data']);
+    Route::get('/tenant/detail/{tenant_id}',[\App\Http\Controllers\TenantController::class, 'detailTenant'])->name('tenant-detail');
 });
 
