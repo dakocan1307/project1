@@ -17,11 +17,11 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
-                    row.unit +
+                    (row.unit == null ? '' : row.unit) +
                     "</a>"
                 );
             },
@@ -32,11 +32,11 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
-                    row.nama +
+                    (row.nama == null ? '' : row.nama) +
                     "</a>"
                 );
                 // return row.nama;
@@ -49,11 +49,11 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
-                    row.nomor_ktp +
+                    (row.nomor_ktp == null ? '' : row.nomor_ktp) +
                     "</a>"
                 );
             },
@@ -64,13 +64,13 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
-                    row.telp1 +
+                    (row.telp1 == null ? '' : row.telp1) +
                     ", " +
-                    row.telp2 +
+                    (row.telp2 == null ? '' : row.telp2) +
                     "</a>"
                 );
             },
@@ -81,13 +81,13 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
-                    row.email1 +
+                    (row.email1 == null ? '' : row.email1) +
                     ", " +
-                    row.email2 +
+                    (row.email2 == null ? '' : row.email2) +
                     "</a>"
                 );
             },
@@ -99,11 +99,11 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
-                    row.alamat +
+                    (row.alamat == null ? '' : row.alamat) +
                     "</a>"
                 );
             },
@@ -114,11 +114,11 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
-                    row.no_inet_basic +
+                    (row.no_inet_basic == null ? '' : row.no_inet_basic) +
                     "</a>"
                 );
             },
@@ -129,14 +129,14 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
                     "Pots1: " +
-                    row.no_telp1_basic +
+                    (row.no_telp1_basic == null ? '' : row.no_telp1_basic) +
                     ", Pots2: " +
-                    row.no_telp2_basic +
+                    (row.no_telp2_basic == null ? '' : row.no_telp2_basic) +
                     "</a>"
                 );
             },
@@ -147,11 +147,11 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
-                    row.no_inet_upgrade +
+                    (row.no_inet_upgrade == null ? '' : row.no_inet_upgrade) +
                     "</a>"
                 );
             },
@@ -162,14 +162,14 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
                     "Pots1: " +
-                    row.no_telp1_upgrade +
+                    (row.no_telp1_upgrade == null ? '' : row.no_telp1_upgrade) +
                     ", Pots2: " +
-                    row.no_telp2_upgrade +
+                    (row.no_telp2_upgrade == null ? '' : row.no_telp2_upgrade) +
                     "</a>"
                 );
             },
@@ -181,11 +181,11 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
-                    row.pppoe +
+                    (row.pppoe == null ? '' : row.pppoe) +
                     "</a>"
                 );
             },
@@ -196,11 +196,11 @@ var table = $("#table").DataTable({
             render: function (data, type, row, meta) {
                 return (
                     '<a href="' +
-                    "tenant" +
+                    "tenant/detail" +
                     "/" +
                     row.tenant_id +
                     '">' +
-                    row.pass_pppoe +
+                    (row.pass_pppoe == null ? '' : row.pass_pppoe) +
                     "</a>"
                 );
             },
