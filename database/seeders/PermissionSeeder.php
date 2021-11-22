@@ -56,5 +56,18 @@ class PermissionSeeder extends Seeder
             'name' => 'delete_tenant',
             'guard_name' => 'web',
         ]);
+
+        Permission::create([
+            'name' => 'create_tiket',
+            'guard_name' => 'web',
+        ]);
+        Permission::create([
+            'name' => 'edit_tiket',
+            'guard_name' => 'web',
+        ]);
+        Permission::create([
+            'name' => 'delete_tiket',
+            'guard_name' => 'web',
+        ]);
     }
 }
